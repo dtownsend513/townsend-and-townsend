@@ -4,19 +4,21 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function ContactPage() {
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
-    "idle"
-  );
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
   const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    const form = event.currentTarget;
+
     setStatus("sending");
     setErrorMessage("");
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
 
     const payload = {
       name: String(formData.get("name") || ""),
@@ -42,11 +44,15 @@ export default function ContactPage() {
       }
 
       setStatus("success");
-      event.currentTarget.reset();
+
+      form.reset();
     } catch (error) {
       setStatus("error");
+
       setErrorMessage(
-        error instanceof Error ? error.message : "Something went wrong."
+        error instanceof Error
+          ? error.message
+          : "Something went wrong."
       );
     }
   }
@@ -113,6 +119,7 @@ export default function ContactPage() {
                 <label className="mb-2 block text-sm font-black text-slate-700">
                   Name
                 </label>
+
                 <input
                   required
                   type="text"
@@ -126,6 +133,7 @@ export default function ContactPage() {
                 <label className="mb-2 block text-sm font-black text-slate-700">
                   Email
                 </label>
+
                 <input
                   required
                   type="email"
@@ -140,6 +148,7 @@ export default function ContactPage() {
               <label className="mb-2 block text-sm font-black text-slate-700">
                 Business Name
               </label>
+
               <input
                 type="text"
                 name="business"
@@ -152,6 +161,7 @@ export default function ContactPage() {
               <label className="mb-2 block text-sm font-black text-slate-700">
                 Current Website
               </label>
+
               <input
                 type="text"
                 name="website"
@@ -164,6 +174,7 @@ export default function ContactPage() {
               <label className="mb-2 block text-sm font-black text-slate-700">
                 What do you need?
               </label>
+
               <textarea
                 required
                 name="message"
@@ -205,6 +216,7 @@ export default function ContactPage() {
           <div className="grid gap-6 md:grid-cols-3">
             <div className="rounded-[2rem] bg-white p-8 shadow-sm">
               <h3 className="text-xl font-black">New Website</h3>
+
               <p className="mt-4 leading-7 text-slate-600">
                 For businesses starting fresh with a clean, professional online
                 presence.
@@ -213,6 +225,7 @@ export default function ContactPage() {
 
             <div className="rounded-[2rem] bg-white p-8 shadow-sm">
               <h3 className="text-xl font-black">Website Redesign</h3>
+
               <p className="mt-4 leading-7 text-slate-600">
                 For outdated websites that need stronger branding, better
                 layout, and mobile cleanup.
@@ -221,6 +234,7 @@ export default function ContactPage() {
 
             <div className="rounded-[2rem] bg-white p-8 shadow-sm">
               <h3 className="text-xl font-black">Online Store</h3>
+
               <p className="mt-4 leading-7 text-slate-600">
                 For businesses ready to sell products online with checkout and
                 payment setup.
