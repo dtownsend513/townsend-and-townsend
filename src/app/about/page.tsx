@@ -1,157 +1,201 @@
 import Link from "next/link";
 
+const values = [
+  {
+    title: "Modern Presentation",
+    description:
+      "Websites designed to help businesses look cleaner, more trustworthy, and more established online.",
+  },
+  {
+    title: "Business Focused",
+    description:
+      "Every section is structured around helping customers understand, trust, and contact your business.",
+  },
+  {
+    title: "Transparent Process",
+    description:
+      "Clear communication, straightforward pricing, and no confusing technical process for clients.",
+  },
+  {
+    title: "Built For Mobile",
+    description:
+      "Modern websites optimized for phones first because most visitors now browse from mobile devices.",
+  },
+];
+
 export default function AboutPage() {
   return (
-    <main className="bg-white text-slate-950">
-      <section className="relative overflow-hidden bg-slate-950 px-6 py-28 text-white lg:px-8">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.2),_transparent_35%)]" />
+    <main className="overflow-hidden bg-[#050b16] text-white">
+      <section className="relative overflow-hidden px-6 pb-28 pt-28 lg:px-8">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.16),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(37,99,235,0.12),_transparent_36%)]" />
 
-        <div className="relative mx-auto max-w-5xl">
-          <p className="mb-5 text-sm font-black uppercase tracking-[0.35em] text-sky-400">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,_rgba(255,255,255,0.03)_1px,_transparent_1px),linear-gradient(to_bottom,_rgba(255,255,255,0.03)_1px,_transparent_1px)] bg-[size:90px_90px] opacity-20" />
+
+        <div className="relative mx-auto max-w-6xl text-center">
+          <div className="inline-flex rounded-full border border-white/10 bg-white/[0.05] px-5 py-2 text-xs font-black uppercase tracking-[0.35em] text-sky-300 backdrop-blur">
             About Townsend & Townsend
-          </p>
+          </div>
 
-          <h1 className="max-w-4xl text-5xl font-black tracking-tight md:text-7xl">
+          <h1 className="mx-auto mt-8 max-w-5xl text-5xl font-black tracking-[-0.05em] md:text-7xl lg:text-8xl">
             Modern websites built with real business understanding.
           </h1>
 
-          <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-300">
-            Townsend & Townsend helps small businesses improve their digital
-            presence with clean branding, responsive websites, and modern user
-            experience built to create trust and drive customer action.
+          <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-300">
+            Townsend & Townsend helps businesses modernize their online presence
+            with cleaner branding, responsive design, and websites focused on
+            building customer trust.
           </p>
         </div>
       </section>
 
-      <section className="px-6 py-24 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.9fr_1.1fr]">
-          
+      <section className="relative px-6 py-28 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-20 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-600">
-              Who We Are
+            <p className="text-sm font-black uppercase tracking-[0.35em] text-sky-300">
+              Our Approach
             </p>
 
-            <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">
+            <h2 className="mt-6 text-4xl font-black tracking-[-0.04em] md:text-6xl">
               Built for businesses that need a stronger online presence.
             </h2>
+
+            <div className="mt-10 rounded-[2rem] border border-white/10 bg-white/[0.05] p-8 backdrop-blur">
+              <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-300">
+                Based In
+              </p>
+
+              <p className="mt-4 text-3xl font-black">
+                Cincinnati, Ohio
+              </p>
+
+              <p className="mt-5 leading-7 text-slate-300">
+                Working with local businesses, startups, ecommerce brands, and
+                growing companies looking for cleaner modern presentation.
+              </p>
+            </div>
           </div>
 
-          <div className="space-y-8 text-lg leading-8 text-slate-600">
+          <div className="space-y-8 text-lg leading-8 text-slate-300">
             <p>
-              Based in Cincinnati, Ohio, Townsend & Townsend focuses on helping
-              businesses modernize their websites and present themselves more
+              Many businesses struggle with outdated websites, weak branding,
+              confusing layouts, or poor mobile experiences that hurt customer
+              confidence before a conversation even starts.
+            </p>
+
+            <p>
+              Townsend & Townsend focuses on building websites that feel modern,
+              trustworthy, organized, and designed around real customer behavior
+              — not just generic templates.
+            </p>
+
+            <p>
+              Every project is built with attention to structure, responsiveness,
+              clarity, branding, and overall business presentation so customers
+              immediately feel more confidence in the company behind the website.
+            </p>
+
+            <p>
+              From service businesses to ecommerce brands, the goal remains the
+              same: build websites that help businesses present themselves more
               professionally online.
             </p>
 
-            <p>
-              Many small businesses either have outdated websites, confusing
-              layouts, poor mobile experiences, or no online presence at all.
-              We help bridge that gap with modern responsive design and cleaner
-              branding.
-            </p>
+            <div className="grid gap-4 pt-4 md:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur">
+                <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-300">
+                  Focus
+                </p>
 
-            <p>
-              Every project is built with attention to speed, usability,
-              structure, and customer trust — without overcomplicating the
-              process for the business owner.
-            </p>
+                <p className="mt-4 text-2xl font-black">
+                  Modern Business Websites
+                </p>
+              </div>
 
-            <p>
-              From service businesses to ecommerce brands, our goal is simple:
-              create websites that look modern, feel trustworthy, and help turn
-              visitors into real customers.
-            </p>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur">
+                <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-300">
+                  Goal
+                </p>
+
+                <p className="mt-4 text-2xl font-black">
+                  Better Online Trust
+                </p>
+              </div>
+            </div>
           </div>
-
         </div>
       </section>
 
-      <section className="bg-slate-100 px-6 py-24 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          
-          <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-black uppercase tracking-[0.3em] text-sky-600">
+      <section className="relative px-6 py-28 lg:px-8">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(56,189,248,0.08),_transparent_40%)]" />
+
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="mb-5 text-sm font-black uppercase tracking-[0.35em] text-sky-300">
               What Matters
             </p>
 
-            <h2 className="text-4xl font-black tracking-tight md:text-6xl">
-              Simple process. Strong presentation.
+            <h2 className="text-4xl font-black tracking-[-0.04em] md:text-6xl">
+              Design that helps businesses look more legitimate online.
             </h2>
           </div>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
-            
-            <div className="rounded-[2rem] bg-white p-8 shadow-sm">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-2xl font-black text-white">
-                1
+          <div className="mt-20 grid gap-8 md:grid-cols-2">
+            {values.map((value) => (
+              <div
+                key={value.title}
+                className="rounded-[2.5rem] border border-white/10 bg-white/[0.05] p-8 shadow-2xl backdrop-blur transition hover:-translate-y-2 hover:bg-white/[0.08]"
+              >
+                <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-400/15 text-2xl font-black text-sky-300">
+                  +
+                </div>
+
+                <h3 className="text-3xl font-black tracking-tight">
+                  {value.title}
+                </h3>
+
+                <p className="mt-6 text-lg leading-8 text-slate-300">
+                  {value.description}
+                </p>
               </div>
-
-              <h3 className="text-2xl font-black">
-                Modern Design
-              </h3>
-
-              <p className="mt-4 leading-7 text-slate-600">
-                Clean layouts, stronger branding, responsive design, and better
-                visual presentation across devices.
-              </p>
-            </div>
-
-            <div className="rounded-[2rem] bg-white p-8 shadow-sm">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-2xl font-black text-white">
-                2
-              </div>
-
-              <h3 className="text-2xl font-black">
-                Business Focused
-              </h3>
-
-              <p className="mt-4 leading-7 text-slate-600">
-                Websites structured to help customers trust your business and
-                make it easier for them to take action.
-              </p>
-            </div>
-
-            <div className="rounded-[2rem] bg-white p-8 shadow-sm">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-2xl font-black text-white">
-                3
-              </div>
-
-              <h3 className="text-2xl font-black">
-                Launch Ready
-              </h3>
-
-              <p className="mt-4 leading-7 text-slate-600">
-                Hosting setup, domain connection, SSL, responsive testing, and
-                deployment support included.
-              </p>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-6 py-24 lg:px-8">
-        <div className="mx-auto max-w-5xl rounded-[2rem] bg-slate-950 px-10 py-20 text-center text-white shadow-2xl">
-          
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.35em] text-sky-400">
-            Ready To Start?
-          </p>
+      <section className="relative px-6 pb-32 pt-10 lg:px-8">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-[3rem] border border-white/10 bg-white/[0.05] shadow-[0_40px_120px_rgba(0,0,0,0.45)] backdrop-blur">
+          <div className="grid gap-10 px-10 py-20 text-center">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.35em] text-sky-300">
+                Ready To Start?
+              </p>
 
-          <h2 className="text-4xl font-black tracking-tight md:text-6xl">
-            Let’s build a website your business can be proud of.
-          </h2>
+              <h2 className="mx-auto mt-6 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">
+                Let’s build a website your business is proud to send people to.
+              </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Clean design. Better presentation. Modern experience.
-          </p>
+              <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-300">
+                Cleaner branding. Better customer trust. Modern responsive
+                design built around real businesses.
+              </p>
 
-          <Link
-            href="/contact"
-            className="mt-10 inline-flex rounded-full bg-white px-8 py-4 text-sm font-black text-slate-950 transition hover:bg-sky-100"
-          >
-            Contact Townsend & Townsend
-          </Link>
+              <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-black text-slate-950 transition hover:-translate-y-1 hover:bg-sky-100"
+                >
+                  Start a Website Project
+                </Link>
 
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.05] px-8 py-4 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-white/10"
+                >
+                  View Portfolio
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

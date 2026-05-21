@@ -1,85 +1,125 @@
 import Link from "next/link";
 
+const navigation = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Services",
+    href: "/services",
+  },
+  {
+    name: "Portfolio",
+    href: "/portfolio",
+  },
+  {
+    name: "About",
+    href: "/about",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
+];
+
+const services = [
+  "Modern Website Design",
+  "Business Website Redesigns",
+  "Ecommerce Development",
+  "Mobile Optimization",
+  "Website Support",
+];
+
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-slate-950 text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(56,189,248,0.12),_transparent_30%)]" />
+    <footer className="relative overflow-hidden bg-[#030712] text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.12),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(37,99,235,0.1),_transparent_35%)]" />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-14 border-b border-white/10 pb-14 lg:grid-cols-[1.2fr_0.8fr]">
-          
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,_rgba(255,255,255,0.03)_1px,_transparent_1px),linear-gradient(to_bottom,_rgba(255,255,255,0.03)_1px,_transparent_1px)] bg-[size:90px_90px] opacity-20" />
+
+      <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-24 lg:px-8">
+        <div className="grid gap-16 border-b border-white/10 pb-16 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.35em] text-sky-400">
+            <div className="inline-flex rounded-full border border-white/10 bg-white/[0.05] px-5 py-2 text-xs font-black uppercase tracking-[0.35em] text-sky-300 backdrop-blur">
               Townsend & Townsend
-            </p>
+            </div>
 
-            <h2 className="mt-5 max-w-2xl text-4xl font-black tracking-tight md:text-5xl">
-              Modern websites built for real businesses.
+            <h2 className="mt-8 max-w-3xl text-4xl font-black tracking-[-0.04em] md:text-5xl">
+              Modern websites built to help businesses look more established online.
             </h2>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-              We help local businesses improve their online presence with
-              cleaner branding, responsive layouts, modern design, and websites
-              built to convert visitors into customers.
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300">
+              Townsend & Townsend helps businesses improve their online presence
+              with cleaner branding, responsive design, modern layouts, and
+              websites focused on building trust with customers.
             </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <div className="rounded-full border border-white/10 bg-white/[0.05] px-5 py-3 text-sm font-bold text-slate-300">
+                Modern Design
+              </div>
+
+              <div className="rounded-full border border-white/10 bg-white/[0.05] px-5 py-3 text-sm font-bold text-slate-300">
+                Mobile Responsive
+              </div>
+
+              <div className="rounded-full border border-white/10 bg-white/[0.05] px-5 py-3 text-sm font-bold text-slate-300">
+                Ecommerce Ready
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-10">
-            
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-[0.25em] text-sky-400">
-                Navigation
-              </h3>
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-300">
+              Navigation
+            </p>
 
-              <div className="mt-6 flex flex-col gap-4 text-sm font-semibold text-slate-300">
-                <Link href="/" className="transition hover:text-white">
-                  Home
+            <div className="mt-8 flex flex-col gap-5">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-base font-bold text-slate-300 transition hover:translate-x-1 hover:text-white"
+                >
+                  {item.name}
                 </Link>
-
-                <Link href="/services" className="transition hover:text-white">
-                  Services
-                </Link>
-
-                <Link href="/portfolio" className="transition hover:text-white">
-                  Portfolio
-                </Link>
-
-                <Link href="/about" className="transition hover:text-white">
-                  About
-                </Link>
-
-                <Link href="/contact" className="transition hover:text-white">
-                  Contact
-                </Link>
-              </div>
+              ))}
             </div>
+          </div>
 
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-[0.25em] text-sky-400">
-                Services
-              </h3>
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-300">
+              Services
+            </p>
 
-              <div className="mt-6 flex flex-col gap-4 text-sm font-semibold text-slate-300">
-                <p>Website Design</p>
-                <p>Website Redesigns</p>
-                <p>Ecommerce Setup</p>
-                <p>Hosting & Maintenance</p>
-              </div>
+            <div className="mt-8 flex flex-col gap-5">
+              {services.map((service) => (
+                <p
+                  key={service}
+                  className="text-base font-bold text-slate-300"
+                >
+                  {service}
+                </p>
+              ))}
             </div>
-
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 pt-8 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-          
-          <p>
+        <div className="flex flex-col gap-5 pt-8 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-slate-400">
+              Cincinnati Web Design Studio
+            </p>
+
+            <p className="mt-2 text-sm text-slate-500">
+              Modern business websites, ecommerce, branding, and responsive design.
+            </p>
+          </div>
+
+          <div className="text-sm text-slate-500">
             © 2026 Townsend & Townsend. All rights reserved.
-          </p>
-
-          <p>
-            Cincinnati, Ohio • Modern Web Design
-          </p>
-
+          </div>
         </div>
       </div>
     </footer>
