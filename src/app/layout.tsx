@@ -5,8 +5,9 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "BrandName",
-  description: "Professional modern website",
+  title: "Townsend & Townsend | Modern Websites for Small Businesses",
+  description:
+    "Townsend & Townsend builds modern, responsive websites for local businesses. Web design, branding, hosting, and digital solutions.",
 };
 
 export default function RootLayout({
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-white text-black antialiased">
         <Navbar />
         {children}
         <Footer />

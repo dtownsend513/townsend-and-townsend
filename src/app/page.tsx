@@ -1,30 +1,16 @@
-import HeroSection from "../components/HeroSection";
-import FeaturesSection from "../components/FeaturesSection";
-import ServicesGrid from "../components/ServicesGrid";
-import StatsSection from "../components/StatsSection";
-import GallerySection from "../components/GallerySection";
-import TestimonialsSection from "../components/TestimonialsSection";
-import FAQSection from "../components/FAQSection";
-import CTASection from "../components/CTASection";
-
-import { theme } from "../data/theme";
+import HeroSection from "@/components/HeroSection";
+import ServicesSection from "@/components/ServicesSection";
+import PortfolioSection from "@/components/PortfolioSection";
+import ProcessSection from "@/components/ProcessSection";
+import CTASection from "@/components/CTASection";
 
 export default function Home() {
   return (
-    <main
-      className="min-h-screen"
-      style={{
-        backgroundColor: theme.colors.background,
-        color: theme.colors.text,
-      }}
-    >
+    <main className="min-h-screen overflow-hidden bg-white">
       <HeroSection />
-      <FeaturesSection />
-      <ServicesGrid />
-      <StatsSection />
-      <GallerySection />
-      <TestimonialsSection />
-      <FAQSection />
+      <ServicesSection />
+      <PortfolioSection />
+      <ProcessSection />
       <CTASection />
     </main>
   );
