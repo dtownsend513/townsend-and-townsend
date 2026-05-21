@@ -1,6 +1,56 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 export default function ContactPage() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
+    "idle"
+  );
+
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    setStatus("sending");
+    setErrorMessage("");
+
+    const formData = new FormData(event.currentTarget);
+
+    const payload = {
+      name: String(formData.get("name") || ""),
+      email: String(formData.get("email") || ""),
+      business: String(formData.get("business") || ""),
+      website: String(formData.get("website") || ""),
+      message: String(formData.get("message") || ""),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      setStatus("success");
+      event.currentTarget.reset();
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "Something went wrong."
+      );
+    }
+  }
+
   return (
     <main className="bg-white text-slate-950">
       <section className="relative overflow-hidden bg-slate-950 px-6 py-28 text-white lg:px-8">
@@ -54,13 +104,17 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <form className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl">
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl"
+          >
             <div className="grid gap-6 md:grid-cols-2">
               <div>
                 <label className="mb-2 block text-sm font-black text-slate-700">
                   Name
                 </label>
                 <input
+                  required
                   type="text"
                   name="name"
                   placeholder="Your name"
@@ -73,6 +127,7 @@ export default function ContactPage() {
                   Email
                 </label>
                 <input
+                  required
                   type="email"
                   name="email"
                   placeholder="you@email.com"
@@ -110,6 +165,7 @@ export default function ContactPage() {
                 What do you need?
               </label>
               <textarea
+                required
                 name="message"
                 rows={6}
                 placeholder="Tell us what you need built, redesigned, or improved."
@@ -118,15 +174,28 @@ export default function ContactPage() {
             </div>
 
             <button
-              type="button"
-              className="mt-8 w-full rounded-full bg-slate-950 px-8 py-4 text-sm font-black text-white transition hover:bg-sky-700"
+              type="submit"
+              disabled={status === "sending"}
+              className="mt-8 w-full rounded-full bg-slate-950 px-8 py-4 text-sm font-black text-white transition hover:bg-sky-700 disabled:cursor-not-allowed disabled:bg-slate-400"
             >
-              Send Website Inquiry
+              {status === "sending"
+                ? "Sending..."
+                : status === "success"
+                  ? "Message Sent"
+                  : "Send Website Inquiry"}
             </button>
 
-            <p className="mt-5 text-center text-sm text-slate-500">
-              Form connection can be added next with Resend or Netlify Forms.
-            </p>
+            {status === "success" && (
+              <p className="mt-5 text-center text-sm font-semibold text-green-600">
+                Message sent successfully. I’ll follow up as soon as possible.
+              </p>
+            )}
+
+            {status === "error" && (
+              <p className="mt-5 text-center text-sm font-semibold text-red-600">
+                {errorMessage}
+              </p>
+            )}
           </form>
         </div>
       </section>
