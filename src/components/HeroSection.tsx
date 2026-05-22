@@ -31,16 +31,16 @@ export default function HeroSection() {
 
       <div className="absolute inset-0 bg-[linear-gradient(to_right,_rgba(255,255,255,0.03)_1px,_transparent_1px),linear-gradient(to_bottom,_rgba(255,255,255,0.03)_1px,_transparent_1px)] bg-[size:90px_90px] opacity-20" />
 
-      <div className="relative mx-auto grid min-h-[90vh] max-w-7xl items-center gap-20 px-6 py-24 lg:grid-cols-[1fr_1fr] lg:px-8">
+      <div className="relative mx-auto grid min-h-[90vh] max-w-7xl items-center gap-20 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:px-8">
         {/* Left Side */}
         <div className="relative z-10 text-center lg:text-left">
           <div className="mb-8 inline-flex items-center rounded-full border border-sky-400/20 bg-sky-400/10 px-5 py-2 text-sm font-semibold text-sky-300 backdrop-blur-sm">
             Modern Websites For Small Businesses
           </div>
 
-          <h1 className="max-w-3xl text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl pb-3 text-5xl font-black leading-[1.08] tracking-tight sm:text-6xl lg:text-[4.3rem]">
             Websites That Make
-            <span className="mt-3 block bg-gradient-to-r from-sky-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="mt-3 block bg-gradient-to-r from-sky-400 to-violet-400 bg-clip-text pb-2 text-transparent">
               Businesses Look Legit
             </span>
           </h1>
