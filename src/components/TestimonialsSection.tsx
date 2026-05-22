@@ -1,101 +1,67 @@
+import FadeUp from "@/components/FadeUp";
+
 const testimonials = [
   {
+    name: "Local Business Owner",
+    role: "Small Business Website",
     quote:
-      "The redesign made the business look dramatically more professional online.",
-    name: "Marcus T.",
-    role: "Barbershop Owner",
+      "The redesign completely changed how professional our business looked online. Customers immediately started complimenting the new site.",
   },
   {
+    name: "Beauty Brand Client",
+    role: "Ecommerce Website",
     quote:
-      "Customers immediately started taking our business more seriously after the new website launched.",
-    name: "Ashley R.",
-    role: "Beauty Brand Founder",
+      "The website finally feels modern and premium. The mobile experience and product presentation look incredible now.",
   },
   {
+    name: "Service Business Client",
+    role: "Lead Generation Website",
     quote:
-      "The site finally feels modern, clean, and much easier for customers to navigate.",
-    name: "David L.",
-    role: "Local Business Owner",
+      "The structure, layout, and calls-to-action made a huge difference. We started getting more inquiries almost immediately.",
   },
 ];
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#050b16] px-6 py-24 text-white lg:px-8">
-      {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.10),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.08),_transparent_35%)]" />
+    <section className="bg-white py-24 text-slate-950">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        
+        <FadeUp>
+          <div className="max-w-3xl">
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-600">
+              Testimonials
+            </p>
 
-      <div className="relative mx-auto max-w-7xl">
-        {/* Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-5 text-sm font-black uppercase tracking-[0.35em] text-sky-300">
-            Client Feedback
-          </p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">
+              Businesses notice the difference when their website finally looks professional.
+            </h2>
+          </div>
+        </FadeUp>
 
-          <h2 className="text-4xl font-black tracking-[-0.04em] md:text-5xl">
-            Better presentation changes how businesses are perceived online.
-          </h2>
-        </div>
-
-        {/* Testimonials */}
-        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.name}
-              className={`rounded-[2rem] border p-8 shadow-2xl backdrop-blur transition hover:-translate-y-1 ${
-                index === 1
-                  ? "border-sky-300/30 bg-white text-slate-950"
-                  : "border-white/10 bg-white/[0.05] text-white"
-              }`}
-            >
-              <div
-                className={`mb-6 text-5xl font-black ${
-                  index === 1
-                    ? "text-sky-500/30"
-                    : "text-sky-300/30"
-                }`}
-              >
-                “
-              </div>
+            <FadeUp key={testimonial.name} delay={index * 0.12}>
+              <div className="group rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                
+                <div className="mb-6 flex gap-1 text-amber-400">
+                  ★★★★★
+                </div>
 
-              <p
-                className={`text-lg leading-8 ${
-                  index === 1
-                    ? "text-slate-700"
-                    : "text-slate-200"
-                }`}
-              >
-                {testimonial.quote}
-              </p>
-
-              <div
-                className={`mt-8 border-t pt-5 ${
-                  index === 1
-                    ? "border-slate-200"
-                    : "border-white/10"
-                }`}
-              >
-                <p
-                  className={`font-black ${
-                    index === 1
-                      ? "text-slate-950"
-                      : "text-white"
-                  }`}
-                >
-                  {testimonial.name}
+                <p className="text-lg leading-8 text-slate-700">
+                  “{testimonial.quote}”
                 </p>
 
-                <p
-                  className={`mt-1 text-sm uppercase tracking-[0.2em] ${
-                    index === 1
-                      ? "text-sky-600"
-                      : "text-sky-300"
-                  }`}
-                >
-                  {testimonial.role}
-                </p>
+                <div className="mt-8 border-t border-slate-200 pt-6">
+                  <h3 className="text-lg font-black">
+                    {testimonial.name}
+                  </h3>
+
+                  <p className="mt-1 text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">
+                    {testimonial.role}
+                  </p>
+                </div>
               </div>
-            </div>
+            </FadeUp>
           ))}
         </div>
       </div>

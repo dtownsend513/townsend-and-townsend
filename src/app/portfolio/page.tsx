@@ -1,277 +1,188 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
   {
-    title: "Komposition Beauty",
-    category: "Luxury Ecommerce Website",
-    image: "/images/komposition-preview.jpg",
+    name: "Auto Detailing Demo",
+    type: "Local Service Website",
     description:
-      "A luxury-focused skincare ecommerce experience designed to elevate branding, improve mobile conversion, and create a more premium customer journey.",
+      "A premium auto-detailing website focused on lead generation, bold visuals, mobile-first structure, and modern service presentation.",
     highlights: [
-      "Luxury ecommerce experience",
-      "Modern responsive design",
-      "Premium branding direction",
-      "Mobile-first optimization",
-      "Custom Next.js development",
+      "High-conversion hero",
+      "Luxury dark design",
+      "Service package layout",
+      "Strong CTA flow",
     ],
-    liveUrl: "https://komposition.com",
-    accent: "from-amber-200/20 via-orange-300/10 to-transparent",
-    external: true,
+    url: "/demo-auto-detailing",
   },
   {
-    title: "Bartender With A Smile",
-    category: "Event Service Website",
-    image: "/images/bartender-preview.jpg",
+    name: "Barbershop Demo",
+    type: "Barbershop Website",
     description:
-      "A modern redesign for a bartending service business focused on stronger presentation, cleaner visuals, mobile responsiveness, and customer trust.",
+      "A modern barbershop website with premium branding, booking-focused sections, clean typography, and a confident local-business feel.",
     highlights: [
-      "Professional redesign",
-      "Improved visual hierarchy",
-      "Better service presentation",
-      "Modern responsive layout",
-      "Optimized customer flow",
+      "Booking-focused structure",
+      "Premium service sections",
+      "Modern typography",
+      "Mobile-first layout",
     ],
-    liveUrl: "https://www.bartenderwithasmile.com",
-    accent: "from-sky-300/20 via-cyan-300/10 to-transparent",
-    external: true,
+    url: "/demo-barbershop",
   },
   {
-    title: "The Chair Club",
-    category: "Barbershop Demo Website",
-    image:
-      "https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    name: "Clothing Brand Demo",
+    type: "Fashion Ecommerce Website",
     description:
-      "A premium barbershop demo focused on appointment booking, service presentation, modern branding, and local business credibility.",
+      "A fashion-focused ecommerce demo built around bold brand presentation, product discovery, clean sections, and modern shopping flow.",
     highlights: [
-      "Modern booking layout",
-      "Barber-focused branding",
-      "Mobile-first design",
-      "Local business positioning",
-      "Premium service presentation",
+      "Fashion brand visuals",
+      "Product-focused layout",
+      "Modern ecommerce feel",
+      "Brand storytelling",
     ],
-    liveUrl: "/demo-barbershop",
-    accent: "from-slate-200/20 via-slate-400/10 to-transparent",
-    external: false,
+    url: "/demo-clothing-brand",
   },
   {
-    title: "Flame Street Eats",
-    category: "Food Truck Demo Website",
-    image:
-      "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=1400&q=80",
+    name: "Food Truck Demo",
+    type: "Restaurant Website",
     description:
-      "A bold food truck concept website built around menu presentation, social energy, catering inquiries, and street-food branding.",
+      "A bold restaurant and food-truck website built for menu visibility, local brand personality, customer engagement, and mobile users.",
     highlights: [
-      "Street food branding",
-      "Menu-focused layout",
-      "Catering inquiry flow",
-      "Social-style visuals",
-      "Mobile optimized",
+      "Menu-first structure",
+      "Local food branding",
+      "Bold visual design",
+      "Mobile-friendly layout",
     ],
-    liveUrl: "/demo-food-truck",
-    accent: "from-orange-300/20 via-red-400/10 to-transparent",
-    external: false,
-  },
-  {
-    title: "Crown District",
-    category: "Clothing Brand Demo Website",
-    image:
-      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1400",
-    description:
-      "A modern streetwear ecommerce demo focused on product drops, visual branding, premium layouts, and mobile shopping.",
-    highlights: [
-      "Streetwear branding",
-      "Product-focused ecommerce",
-      "Luxury visual direction",
-      "Modern product presentation",
-      "Mobile shopping experience",
-    ],
-    liveUrl: "/demo-clothing-brand",
-    accent: "from-violet-300/20 via-indigo-400/10 to-transparent",
-    external: false,
-  },
-  {
-    title: "Fresh Finish Auto Care",
-    category: "Auto Detailing Demo Website",
-    image:
-      "https://images.pexels.com/photos/6872144/pexels-photo-6872144.jpeg?auto=compress&cs=tinysrgb&w=1400",
-    description:
-      "A realistic detailing and wrap-shop demo website showcasing interior cleaning, tint prep, detailing packages, and service booking.",
-    highlights: [
-      "Auto detailing branding",
-      "Interior cleaning visuals",
-      "Wrap & tint positioning",
-      "Service-focused layout",
-      "Lead-generation design",
-    ],
-    liveUrl: "/demo-auto-detailing",
-    accent: "from-sky-300/20 via-blue-400/10 to-transparent",
-    external: false,
+    url: "/demo-food-truck",
   },
 ];
 
 export default function PortfolioPage() {
   return (
-    <main className="overflow-hidden bg-[#050b16] text-white">
-      {/* Hero */}
-      <section className="relative overflow-hidden px-6 pb-24 pt-28 lg:px-8">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.18),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(37,99,235,0.16),_transparent_35%)]" />
+    <main className="min-h-screen overflow-hidden bg-slate-950 text-white">
+      <section className="relative px-6 pb-24 pt-40 lg:px-8">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(14,165,233,0.22),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(245,158,11,0.14),_transparent_30%)]" />
 
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,_rgba(255,255,255,0.035)_1px,_transparent_1px),linear-gradient(to_bottom,_rgba(255,255,255,0.035)_1px,_transparent_1px)] bg-[size:90px_90px] opacity-20" />
+        <div className="absolute left-[-120px] top-24 h-[320px] w-[320px] rounded-full bg-sky-500/20 blur-[120px]" />
+        <div className="absolute bottom-[-120px] right-[-100px] h-[300px] w-[300px] rounded-full bg-blue-700/20 blur-[120px]" />
 
-        <div className="relative mx-auto max-w-6xl text-center">
-          <div className="inline-flex rounded-full border border-white/10 bg-white/10 px-5 py-2 text-xs font-black uppercase tracking-[0.35em] text-sky-300 backdrop-blur">
-            Selected Work
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-300">
+              Portfolio
+            </p>
+
+            <h1 className="mt-5 text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
+              Demo websites built to show what your business could become.
+            </h1>
+
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-300">
+              These demo projects showcase industry-specific layouts, visual
+              direction, mobile-first structure, and conversion-focused website
+              sections for different types of small businesses.
+            </p>
           </div>
 
-          <h1 className="mx-auto mt-8 max-w-5xl text-5xl font-black tracking-[-0.04em] md:text-7xl lg:text-8xl">
-            Modern websites built to elevate businesses online.
-          </h1>
+          <div className="mt-16 grid gap-10 lg:grid-cols-2">
+            {projects.map((project) => (
+              <div
+                key={project.name}
+                className="group overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-3 hover:bg-white/10"
+              >
+                <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900">
+                  <div className="flex items-center gap-2 border-b border-white/10 px-5 py-4">
+                    <span className="h-3 w-3 rounded-full bg-red-400" />
+                    <span className="h-3 w-3 rounded-full bg-yellow-400" />
+                    <span className="h-3 w-3 rounded-full bg-green-400" />
 
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl md:leading-9">
-            From ecommerce brands and food businesses to local services and
-            startups, these projects are designed to make businesses look more
-            modern, trustworthy, and customer-ready.
-          </p>
-        </div>
-      </section>
+                    <div className="ml-3 flex-1 truncate rounded-full bg-white/10 px-4 py-1 text-xs text-slate-400">
+                      {project.url}
+                    </div>
+                  </div>
 
-      {/* Projects */}
-      <section className="relative px-6 pb-28 lg:px-8">
-        <div className="mx-auto max-w-7xl space-y-32">
-          {projects.map((project, index) => (
-            <div
-              key={project.title}
-              className={`grid items-center gap-16 lg:grid-cols-2 ${
-                index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
-              }`}
-            >
-              {/* Image Side */}
-              <div className="relative group">
-                <div
-                  className={`absolute -inset-10 rounded-full bg-gradient-to-r ${project.accent} blur-3xl`}
-                />
+                  <div className="relative h-[460px] overflow-hidden bg-slate-950">
+                    <div className="absolute inset-0 z-10 opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.08),_transparent_60%)]" />
 
-                <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.06] p-5 shadow-[0_40px_120px_rgba(0,0,0,0.45)] backdrop-blur transition duration-500 group-hover:-translate-y-2">
-                  <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#020817]">
-                    <div className="flex items-center gap-2 border-b border-white/10 px-5 py-4">
-                      <span className="h-3 w-3 rounded-full bg-red-400" />
-                      <span className="h-3 w-3 rounded-full bg-yellow-400" />
-                      <span className="h-3 w-3 rounded-full bg-green-400" />
+                    <iframe
+                      src={project.url}
+                      title={project.name}
+                      loading="lazy"
+                      className="pointer-events-none h-[920px] w-[200%] origin-top-left scale-50 border-0 bg-white transition duration-700 group-hover:scale-[0.52]"
+                    />
 
-                      <div className="ml-4 rounded-full bg-white/10 px-4 py-1 text-xs font-bold text-slate-300">
-                        Website Preview
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+                    <div className="absolute inset-x-0 bottom-0 p-6">
+                      <div className="rounded-2xl border border-white/10 bg-black/70 p-5 backdrop-blur-xl">
+                        <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-300">
+                          {project.type}
+                        </p>
+
+                        <h2 className="mt-2 text-3xl font-black leading-tight text-white md:text-4xl">
+                          {project.name}
+                        </h2>
                       </div>
                     </div>
+                  </div>
+                </div>
 
-                    {project.image.startsWith("http") ? (
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="h-auto w-full object-cover transition duration-700 group-hover:scale-[1.03]"
-                      />
-                    ) : (
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        width={1800}
-                        height={1200}
-                        className="h-auto w-full object-cover transition duration-700 group-hover:scale-[1.03]"
-                      />
-                    )}
+                <div className="p-6 md:p-8">
+                  <p className="leading-8 text-slate-300">
+                    {project.description}
+                  </p>
+
+                  <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                    {project.highlights.map((highlight) => (
+                      <div
+                        key={highlight}
+                        className="rounded-2xl border border-white/10 bg-white/5 p-4"
+                      >
+                        <span className="text-sky-300">✓</span>
+                        <p className="mt-2 text-sm font-bold text-white">
+                          {highlight}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                    <Link
+                      href={project.url}
+                      className="inline-flex justify-center rounded-full bg-sky-400 px-6 py-4 text-xs font-black uppercase tracking-[0.2em] text-slate-950 transition hover:bg-sky-300"
+                    >
+                      View Demo Site
+                    </Link>
+
+                    <Link
+                      href="/contact"
+                      className="inline-flex justify-center rounded-full border border-white/10 px-6 py-4 text-xs font-black uppercase tracking-[0.2em] text-white transition hover:bg-white hover:text-slate-950"
+                    >
+                      Request Similar Site
+                    </Link>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
 
-              {/* Content */}
-              <div>
-                <p className="text-sm font-black uppercase tracking-[0.35em] text-sky-300">
-                  {project.category}
-                </p>
-
-                <h2 className="mt-6 text-4xl font-black tracking-[-0.03em] md:text-6xl">
-                  {project.title}
-                </h2>
-
-                <p className="mt-8 text-lg leading-8 text-slate-300">
-                  {project.description}
-                </p>
-
-                <div className="mt-10 grid gap-4">
-                  {project.highlights.map((highlight) => (
-                    <div
-                      key={highlight}
-                      className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur transition hover:border-sky-300/20 hover:bg-white/[0.06]"
-                    >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-400/15 text-sm font-black text-sky-300">
-                        ✓
-                      </div>
-
-                      <p className="font-semibold text-slate-200">
-                        {highlight}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-10 flex flex-wrap gap-4">
-                  <Link
-                    href={project.liveUrl}
-                    target={project.external ? "_blank" : undefined}
-                    className="rounded-full bg-white px-8 py-4 text-sm font-black text-slate-950 transition hover:-translate-y-1 hover:bg-sky-100"
-                  >
-                    {project.external
-                      ? "View Live Website"
-                      : "View Demo Website"}
-                  </Link>
-
-                  <Link
-                    href="/contact"
-                    className="rounded-full border border-white/15 bg-white/[0.04] px-8 py-4 text-sm font-black text-white transition hover:bg-white/10"
-                  >
-                    Build Something Similar
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="relative px-6 pb-32 lg:px-8">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(56,189,248,0.12),_transparent_45%)]" />
-
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[3rem] border border-white/10 bg-white/[0.05] px-10 py-20 text-center shadow-[0_40px_120px_rgba(0,0,0,0.45)] backdrop-blur">
-          <div className="mx-auto max-w-4xl">
-            <p className="text-sm font-black uppercase tracking-[0.35em] text-sky-300">
-              Your Business Next
+          <div className="mt-20 rounded-[2.5rem] border border-white/10 bg-white/5 p-10 text-center backdrop-blur">
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-300">
+              Want a site like these?
             </p>
 
-            <h2 className="mt-6 text-4xl font-black tracking-[-0.03em] md:text-6xl">
-              Let’s build a website that actually feels professional.
+            <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-black tracking-tight md:text-6xl">
+              Let’s build a professional website for your business.
             </h2>
 
-            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-300">
-              Modern layouts, responsive design, stronger branding, cleaner
-              presentation, and a website your customers actually trust.
+            <p className="mx-auto mt-6 max-w-2xl leading-8 text-slate-300">
+              Start with a free website review. We’ll look at your current
+              online presence and recommend the cleanest path forward.
             </p>
 
-            <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="rounded-full bg-white px-8 py-4 text-sm font-black text-slate-950 transition hover:-translate-y-1 hover:bg-sky-100"
-              >
-                Start a Website Project
-              </Link>
-
-              <Link
-                href="/services"
-                className="rounded-full border border-white/15 bg-white/[0.04] px-8 py-4 text-sm font-black text-white transition hover:bg-white/10"
-              >
-                Explore Services
-              </Link>
-            </div>
+            <Link
+              href="/contact"
+              className="mt-8 inline-flex rounded-full bg-sky-400 px-8 py-4 text-xs font-black uppercase tracking-[0.2em] text-slate-950 transition hover:bg-sky-300"
+            >
+              Request Website Review
+            </Link>
           </div>
         </div>
       </section>

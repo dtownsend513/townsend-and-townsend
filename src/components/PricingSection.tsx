@@ -1,124 +1,111 @@
-import Link from "next/link";
+const pricing = [
+  {
+    name: "Starter Website",
+    price: "$499+",
+    description:
+      "Perfect for startups, solo businesses, and local services that need a clean professional online presence.",
+    features: [
+      "Up to 5 pages",
+      "Mobile-friendly design",
+      "Contact form",
+      "Basic SEO setup",
+      "Launch assistance",
+    ],
+    highlight: false,
+  },
+  {
+    name: "Business Website",
+    price: "$999+",
+    description:
+      "A stronger business-focused website with more sections, branding, polish, and conversion structure.",
+    features: [
+      "Custom design layout",
+      "Advanced sections",
+      "Stronger branding",
+      "Expanded SEO setup",
+      "Higher-end visual polish",
+    ],
+    highlight: true,
+  },
+  {
+    name: "Ecommerce Website",
+    price: "Custom",
+    description:
+      "For product brands and businesses that need online shopping, checkout systems, and product management.",
+    features: [
+      "Product pages",
+      "Shopping cart",
+      "Checkout integration",
+      "Mobile ecommerce flow",
+      "Launch support",
+    ],
+    highlight: false,
+  },
+];
 
 export default function PricingSection() {
   return (
-    <section
-      id="pricing"
-      className="relative overflow-hidden bg-slate-950 py-28 text-white scroll-mt-28"
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(56,189,248,0.12),_transparent_30%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(168,85,247,0.12),_transparent_30%)]" />
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-400">
-            Simple Pricing
+    <section className="bg-slate-950 py-24 text-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="text-center">
+          <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-400">
+            Pricing
           </p>
 
-          <h2 className="mt-6 text-4xl font-black tracking-tight sm:text-5xl">
-            Website Solutions For Growing Businesses
+          <h2 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">
+            Website packages designed for growing businesses.
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-300">
-            Whether you're launching a new business or upgrading your brand, we
-            offer modern website solutions designed to help you stand out online.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+            Whether you need a simple online presence or a more advanced
+            customer-focused website, the goal is to provide a polished,
+            professional result without oversized agency pricing.
           </p>
         </div>
 
-        <div className="mt-20 grid gap-8 lg:grid-cols-3">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-400">
-              Starter Website
-            </p>
-
-            <h3 className="mt-6 text-5xl font-black">$499</h3>
-
-            <p className="mt-4 text-slate-300">
-              Perfect for entrepreneurs, startups, and local businesses.
-            </p>
-
-            <ul className="mt-8 space-y-4 text-slate-200">
-              <li>• Up to 5 Pages</li>
-              <li>• Mobile-Friendly Design</li>
-              <li>• Contact Form</li>
-              <li>• Social Media Integration</li>
-              <li>• Basic SEO Setup</li>
-              <li>• Launch Assistance</li>
-            </ul>
-
-            <Link
-              href="/contact"
-              className="mt-10 inline-flex w-full items-center justify-center rounded-2xl bg-sky-500 px-6 py-4 text-lg font-semibold text-white transition hover:bg-sky-400"
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {pricing.map((plan) => (
+            <div
+              key={plan.name}
+              className={`rounded-[2rem] border p-8 transition hover:-translate-y-1 ${
+                plan.highlight
+                  ? "border-sky-400 bg-sky-400/10 shadow-2xl shadow-sky-500/10"
+                  : "border-white/10 bg-white/5"
+              }`}
             >
-              Get Started
-            </Link>
-          </div>
+              {plan.highlight && (
+                <div className="mb-6 inline-flex rounded-full bg-sky-400 px-4 py-2 text-xs font-black uppercase tracking-[0.25em] text-slate-950">
+                  Most Popular
+                </div>
+              )}
 
-          <div className="relative rounded-3xl border border-sky-400/40 bg-sky-500/10 p-10 backdrop-blur-sm">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-sky-500/30">
-              Most Popular
+              <h3 className="text-3xl font-black">{plan.name}</h3>
+
+              <p className="mt-4 text-5xl font-black text-sky-300">
+                {plan.price}
+              </p>
+
+              <p className="mt-5 leading-7 text-slate-300">
+                {plan.description}
+              </p>
+
+              <ul className="mt-8 space-y-4">
+                {plan.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-center gap-3 text-sm font-semibold text-slate-200"
+                  >
+                    <span className="text-sky-400">✓</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <button className="mt-10 w-full rounded-full bg-white px-6 py-4 text-sm font-black uppercase tracking-[0.2em] text-slate-950 transition hover:bg-sky-300">
+                Get Started
+              </button>
             </div>
-
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-300">
-              Business Website
-            </p>
-
-            <h3 className="mt-6 text-5xl font-black">$999+</h3>
-
-            <p className="mt-4 text-slate-200">
-              Ideal for growing brands and businesses needing advanced
-              functionality.
-            </p>
-
-            <ul className="mt-8 space-y-4 text-slate-100">
-              <li>• Custom Website Design</li>
-              <li>• Advanced Branding Sections</li>
-              <li>• Booking Integrations</li>
-              <li>• Ecommerce Options</li>
-              <li>• Custom Layouts</li>
-              <li>• Enhanced Optimization</li>
-            </ul>
-
-            <Link
-              href="/contact"
-              className="mt-10 inline-flex w-full items-center justify-center rounded-2xl bg-white px-6 py-4 text-lg font-semibold text-slate-950 transition hover:bg-slate-200"
-            >
-              Request A Quote
-            </Link>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-violet-400">
-              Monthly Care Plan
-            </p>
-
-            <h3 className="mt-6 text-5xl font-black">
-              $25-50
-              <span className="text-xl font-medium text-slate-400">
-                /month
-              </span>
-            </h3>
-
-            <p className="mt-4 text-slate-300">
-              Ongoing website maintenance and support for growing businesses.
-            </p>
-
-            <ul className="mt-8 space-y-4 text-slate-200">
-              <li>• Hosting Included</li>
-              <li>• Website Updates</li>
-              <li>• Minor Edits</li>
-              <li>• Maintenance & Support</li>
-              <li>• Performance Monitoring</li>
-              <li>• Ongoing Assistance</li>
-            </ul>
-
-            <Link
-              href="/contact"
-              className="mt-10 inline-flex w-full items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-4 text-lg font-semibold text-white transition hover:bg-white/10"
-            >
-              Learn More
-            </Link>
-          </div>
+          ))}
         </div>
       </div>
     </section>

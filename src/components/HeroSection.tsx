@@ -1,224 +1,145 @@
 import Link from "next/link";
 
-const previewCards = [
-  {
-    title: "Barbershop",
-    label: "Booking Website",
-    image:
-      "https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  },
-  {
-    title: "Food Truck",
-    label: "Menu + Locations",
-    image:
-      "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Auto Detailing",
-    label: "Service Website",
-    image:
-      "https://images.pexels.com/photos/6872144/pexels-photo-6872144.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  },
-];
-
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-slate-950 text-white">
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.18),_transparent_34%)]" />
+    <section className="relative overflow-hidden bg-slate-950">
+      
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(14,165,233,0.25),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(245,158,11,0.18),_transparent_30%)]" />
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.16),_transparent_36%)]" />
+      <div className="absolute left-[-120px] top-20 h-[320px] w-[320px] rounded-full bg-sky-500/20 blur-[120px]" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,_rgba(255,255,255,0.03)_1px,_transparent_1px),linear-gradient(to_bottom,_rgba(255,255,255,0.03)_1px,_transparent_1px)] bg-[size:90px_90px] opacity-20" />
+      <div className="absolute bottom-[-100px] right-[-100px] h-[300px] w-[300px] rounded-full bg-blue-700/20 blur-[120px]" />
 
-      <div className="relative mx-auto grid min-h-[90vh] max-w-7xl items-center gap-20 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:px-8">
-        {/* Left Side */}
-        <div className="relative z-10 text-center lg:text-left">
-          <div className="mb-8 inline-flex items-center rounded-full border border-sky-400/20 bg-sky-400/10 px-5 py-2 text-sm font-semibold text-sky-300 backdrop-blur-sm">
-            Modern Websites For Small Businesses
-          </div>
-
-          <h1 className="max-w-4xl pb-3 text-5xl font-black leading-[1.08] tracking-tight sm:text-6xl lg:text-[4.3rem]">
-            Websites That Make
-            <span className="mt-3 block bg-gradient-to-r from-sky-400 to-violet-400 bg-clip-text pb-2 text-transparent">
-              Businesses Look Legit
-            </span>
-          </h1>
-
-          <p className="mt-8 max-w-xl text-lg leading-8 text-slate-300 sm:text-xl lg:mx-0">
-            Premium website design for entrepreneurs, local businesses,
-            ecommerce brands, and growing startups.
+      <div className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-16 px-6 py-24 pt-32 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+        
+        <div>
+          <p className="mb-6 inline-flex rounded-full border border-sky-400/30 bg-sky-400/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.25em] text-sky-300 backdrop-blur">
+            Cincinnati Web Design For Small Businesses
           </p>
 
-          {/* CTA */}
-          <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+          <h1 className="max-w-5xl text-5xl font-black leading-[0.9] tracking-tight text-white md:text-7xl xl:text-8xl">
+            Websites that make your business look
+            <span className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
+              {" "}
+              premium,
+            </span>
+            trusted, and ready for customers.
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl">
+            Townsend & Townsend builds modern, mobile-first websites for local businesses, entrepreneurs, and brands that need stronger visual trust, better conversion flow, and a more professional online presence.
+          </p>
+
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="rounded-2xl bg-sky-500 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-sky-500/30 transition hover:scale-[1.02] hover:bg-sky-400"
+              className="group rounded-full bg-sky-400 px-8 py-4 text-center text-sm font-black uppercase tracking-[0.2em] text-slate-950 transition duration-300 hover:scale-105 hover:bg-sky-300"
             >
-              Start Your Website
+              Get A Free Website Review
             </Link>
 
             <Link
               href="/portfolio"
-              className="rounded-2xl border border-white/15 bg-white/5 px-8 py-4 text-lg font-bold text-white backdrop-blur-sm transition hover:border-sky-400/50 hover:bg-white/10"
+              className="rounded-full border border-white/20 px-8 py-4 text-center text-sm font-black uppercase tracking-[0.2em] text-white transition duration-300 hover:bg-white hover:text-slate-950"
             >
-              View Portfolio
+              View Demo Portfolio
             </Link>
           </div>
 
-          {/* Stats */}
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur">
-              <p className="text-2xl font-black text-white">$499+</p>
+          <div className="mt-14 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+              <p className="text-4xl font-black text-white">$499+</p>
 
-              <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
-                Starter Sites
+              <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">
+                Starter Websites
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur">
-              <p className="text-2xl font-black text-white">Mobile</p>
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+              <p className="text-4xl font-black text-white">Mobile</p>
 
-              <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+              <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">
                 First Design
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur">
-              <p className="text-2xl font-black text-white">Done</p>
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+              <p className="text-4xl font-black text-white">Fast</p>
 
-              <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
-                For You
+              <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">
+                Turnaround
               </p>
             </div>
           </div>
         </div>
 
-        {/* Right Side Visual */}
-        <div className="relative hidden min-h-[640px] lg:block">
-          {/* Glow */}
-          <div className="absolute left-1/2 top-1/2 h-[540px] w-[540px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-500/20 blur-3xl" />
-
-          <div className="absolute right-0 top-16 h-72 w-72 rounded-full bg-violet-500/20 blur-3xl" />
-
-          {/* Main Browser Card */}
-          <div className="absolute left-0 top-16 w-[78%] overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/[0.07] p-4 shadow-[0_50px_140px_rgba(0,0,0,0.55)] backdrop-blur-xl">
-            <div className="overflow-hidden rounded-[1.6rem] border border-white/10 bg-slate-950">
-              {/* Browser Top */}
-              <div className="flex items-center gap-2 border-b border-white/10 px-5 py-4">
+        <div className="relative">
+          <div className="rounded-[2.5rem] border border-white/10 bg-white/10 p-4 shadow-2xl backdrop-blur-xl">
+            
+            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900">
+              
+              <div className="flex items-center gap-2 border-b border-white/10 px-6 py-5">
                 <span className="h-3 w-3 rounded-full bg-red-400" />
                 <span className="h-3 w-3 rounded-full bg-yellow-400" />
                 <span className="h-3 w-3 rounded-full bg-green-400" />
 
-                <div className="ml-4 rounded-full bg-white/10 px-4 py-1 text-xs font-bold text-slate-300">
-                  Demo Website Preview
-                </div>
+                <div className="ml-3 h-8 flex-1 rounded-full bg-white/10" />
               </div>
 
-              {/* Main Image */}
-              <div className="relative h-[400px]">
-                <img
-                  src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1400"
-                  alt="Clothing brand website demo"
-                  className="h-full w-full object-cover"
-                />
+              <div className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-sky-900 p-8">
+                
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.08),_transparent_30%)]" />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/10 to-transparent" />
+                <div className="relative space-y-8">
+                  
+                  <div className="space-y-4">
+                    <div className="h-4 w-28 rounded-full bg-white/20" />
+                    <div className="h-5 w-56 rounded-full bg-white/10" />
+                  </div>
 
-                <div className="absolute bottom-6 left-6 right-6">
-                  <p className="text-xs font-black uppercase tracking-[0.3em] text-indigo-300">
-                    Ecommerce Demo
-                  </p>
+                  <div className="grid gap-5 md:grid-cols-2">
+                    <div className="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur">
+                      <div className="h-4 w-20 rounded-full bg-white/30" />
 
-                  <h3 className="mt-2 text-4xl font-black">
-                    Clothing Brand Website
-                  </h3>
+                      <div className="mt-5 h-24 rounded-2xl bg-white/10" />
+                    </div>
 
-                  <p className="mt-3 max-w-md text-sm leading-6 text-slate-300">
-                    Clean product presentation with premium branding and mobile
-                    ecommerce optimization.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+                    <div className="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur">
+                      <div className="h-4 w-20 rounded-full bg-white/30" />
 
-          {/* Top Floating Card */}
-          <div className="absolute right-0 top-0 w-[38%] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.08] p-3 shadow-2xl backdrop-blur-xl">
-            <div className="overflow-hidden rounded-[1.4rem]">
-              <img
-                src={previewCards[0].image}
-                alt="Barbershop website preview"
-                className="h-[180px] w-full object-cover"
-              />
-            </div>
+                      <div className="mt-5 h-24 rounded-2xl bg-white/10" />
+                    </div>
+                  </div>
 
-            <div className="p-4">
-              <p className="text-xs font-black uppercase tracking-[0.25em] text-sky-300">
-                {previewCards[0].label}
-              </p>
+                  <div className="rounded-[2rem] border border-white/10 bg-black/30 p-8 backdrop-blur-xl">
+                    <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-300">
+                      Premium Small Business Websites
+                    </p>
 
-              <h4 className="mt-2 text-xl font-black">
-                {previewCards[0].title}
-              </h4>
-            </div>
-          </div>
+                    <h2 className="mt-4 text-5xl font-black leading-tight text-white">
+                      Modern layouts built to impress customers.
+                    </h2>
 
-          {/* Bottom Floating Card */}
-          <div className="absolute bottom-16 right-6 w-[36%] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.08] p-3 shadow-2xl backdrop-blur-xl">
-            <div className="overflow-hidden rounded-[1.4rem]">
-              <img
-                src={previewCards[1].image}
-                alt="Food truck website preview"
-                className="h-[170px] w-full object-cover"
-              />
-            </div>
+                    <p className="mt-6 max-w-lg text-lg leading-8 text-slate-300">
+                      Better design, stronger branding, cleaner structure, and modern mobile-first experiences.
+                    </p>
 
-            <div className="p-4">
-              <p className="text-xs font-black uppercase tracking-[0.25em] text-orange-300">
-                {previewCards[1].label}
-              </p>
-
-              <h4 className="mt-2 text-xl font-black">
-                {previewCards[1].title}
-              </h4>
-            </div>
-          </div>
-
-          {/* Phone Mockup */}
-          <div className="absolute bottom-0 left-6 w-[28%] overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-950 p-3 shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
-            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-black">
-              <img
-                src={previewCards[2].image}
-                alt="Auto detailing preview"
-                className="h-[280px] w-full object-cover"
-              />
-
-              <div className="p-4">
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-sky-300">
-                  Service Website
-                </p>
-
-                <h4 className="mt-2 text-lg font-black">
-                  Auto Detailing
-                </h4>
-
-                <div className="mt-4 rounded-full bg-sky-400 px-4 py-3 text-center text-xs font-black uppercase tracking-wide text-black">
-                  Book Now
+                    <div className="mt-8 inline-flex rounded-full bg-sky-400 px-6 py-3 text-xs font-black uppercase tracking-[0.2em] text-slate-950">
+                      Modern UI Experience
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Floating Label */}
-          <div className="absolute bottom-32 left-0 rounded-2xl border border-white/10 bg-white/[0.08] p-5 shadow-2xl backdrop-blur-xl">
-            <p className="text-xs font-black uppercase tracking-[0.25em] text-sky-300">
-              Built For
+          <div className="absolute -bottom-10 -left-10 rounded-3xl border border-white/10 bg-white p-6 text-slate-950 shadow-2xl">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-sky-600">
+              Built To Convert
             </p>
 
-            <p className="mt-2 text-2xl font-black">
-              Local Business Growth
+            <p className="mt-2 max-w-xs text-sm font-semibold">
+              Strong messaging, cleaner layouts, modern visuals, and mobile-first structure designed to increase customer trust.
             </p>
           </div>
         </div>

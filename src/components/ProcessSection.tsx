@@ -1,109 +1,65 @@
 const steps = [
   {
     number: "01",
-    title: "Discovery",
+    title: "Review",
     description:
-      "We clarify your business goals, audience, current website issues, page needs, and the main action customers should take.",
-    details: ["Business goals", "Website structure", "Content direction"],
+      "We review your current website, goals, services, brand, and what your customers need to understand quickly.",
   },
   {
     number: "02",
-    title: "Design & Build",
+    title: "Plan",
     description:
-      "Your website is designed with a modern layout, responsive structure, clear messaging, and customer-focused sections.",
-    details: ["Modern layout", "Mobile-first design", "Conversion flow"],
+      "We map out the pages, sections, messaging, calls-to-action, and layout needed to make the site stronger.",
   },
   {
     number: "03",
-    title: "Launch",
+    title: "Build",
     description:
-      "We test the site, connect your domain, configure SSL, verify forms, and prepare the website for real customer traffic.",
-    details: ["Domain setup", "SSL/HTTPS", "Form testing"],
+      "We design and build the website with a clean modern structure, mobile-first layout, and clear conversion flow.",
   },
   {
     number: "04",
-    title: "Support",
+    title: "Launch",
     description:
-      "After launch, optional support is available for updates, small edits, troubleshooting, and future improvements.",
-    details: ["Optional care", "Small edits", "Future upgrades"],
+      "We test the site, connect the domain, verify forms, check mobile views, and prepare it for customers.",
   },
 ];
 
 export default function ProcessSection() {
   return (
-    <section className="relative overflow-hidden bg-[#050b16] px-6 py-32 text-white lg:px-8">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.14),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(37,99,235,0.12),_transparent_36%)]" />
-
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,_rgba(255,255,255,0.035)_1px,_transparent_1px),linear-gradient(to_bottom,_rgba(255,255,255,0.035)_1px,_transparent_1px)] bg-[size:90px_90px] opacity-20" />
-
-      <div className="relative mx-auto max-w-7xl">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-5 text-sm font-black uppercase tracking-[0.35em] text-sky-300">
-            How It Works
+    <section className="bg-white py-24 text-slate-950">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-600">
+            Our Process
           </p>
 
-          <h2 className="text-4xl font-black tracking-[-0.04em] md:text-6xl">
-            A clear process from first idea to live website.
+          <h2 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">
+            A simple process that takes your website from outdated to polished.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-            Building a website should not feel confusing. Our process keeps the
-            project organized, focused, and moving toward a professional launch.
+          <p className="mt-6 text-lg leading-8 text-slate-600">
+            The process is built to stay clear, organized, and focused on what
+            matters: getting your business online with a website that looks
+            professional and works correctly.
           </p>
         </div>
 
-        <div className="relative mt-20">
-          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-sky-400 via-white/20 to-transparent lg:block" />
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+            >
+              <p className="text-5xl font-black text-sky-600">{step.number}</p>
 
-          <div className="space-y-10">
-            {steps.map((step, index) => (
-              <div
-                key={step.number}
-                className={`relative grid gap-8 lg:grid-cols-2 lg:items-center ${
-                  index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
-                }`}
-              >
-                <div
-                  className={`rounded-[2.5rem] border border-white/10 bg-white/[0.06] p-8 shadow-2xl backdrop-blur transition hover:-translate-y-2 hover:bg-white/[0.08] ${
-                    index % 2 === 0 ? "lg:mr-10" : "lg:ml-10"
-                  }`}
-                >
-                  <div className="mb-8 flex items-center gap-4">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-400/15 text-2xl font-black text-sky-300">
-                      {step.number}
-                    </div>
+              <h3 className="mt-8 text-2xl font-black">{step.title}</h3>
 
-                    <div>
-                      <p className="text-xs font-black uppercase tracking-[0.3em] text-sky-300">
-                        Step {step.number}
-                      </p>
-
-                      <h3 className="mt-2 text-3xl font-black tracking-tight">
-                        {step.title}
-                      </h3>
-                    </div>
-                  </div>
-
-                  <p className="text-lg leading-8 text-slate-300">
-                    {step.description}
-                  </p>
-
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    {step.details.map((detail) => (
-                      <span
-                        key={detail}
-                        className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-xs font-black uppercase tracking-wide text-slate-300"
-                      >
-                        {detail}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="hidden lg:block" />
-              </div>
-            ))}
-          </div>
+              <p className="mt-4 leading-7 text-slate-600">
+                {step.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,125 +1,102 @@
-import Link from "next/link";
+import FadeUp from "@/components/FadeUp";
 
 const services = [
   {
-    title: "Business Websites",
+    title: "Starter Business Websites",
+    price: "From $499",
     description:
-      "Modern websites for local businesses, startups, and entrepreneurs.",
-    features: [
-      "Mobile responsive",
-      "Modern layouts",
-      "Professional branding",
+      "Clean, professional websites for startups, solo entrepreneurs, and local businesses that need to get online fast.",
+    items: [
+      "Up to 5 pages",
+      "Mobile-friendly layout",
+      "Contact form",
+      "Basic SEO",
+      "Launch support",
     ],
-  },
-  {
-    title: "Ecommerce Stores",
-    description:
-      "Clean online stores designed for product sales and brand growth.",
-    features: [
-      "Product pages",
-      "Shopping cart setup",
-      "Conversion-focused design",
-    ],
-    featured: true,
   },
   {
     title: "Website Redesigns",
+    price: "Custom Quote",
     description:
-      "Refresh outdated websites with a cleaner and more modern experience.",
-    features: [
-      "Updated visuals",
-      "Better mobile experience",
-      "Stronger customer trust",
+      "Upgrade an outdated website into a modern experience that looks trustworthy and works better on mobile.",
+    items: [
+      "Modern redesign",
+      "Improved layout",
+      "Better messaging",
+      "Stronger CTAs",
+      "Mobile polish",
+    ],
+  },
+  {
+    title: "Ecommerce Websites",
+    price: "From $999+",
+    description:
+      "Professional online stores for beauty brands, clothing brands, product sellers, and local entrepreneurs.",
+    items: [
+      "Product pages",
+      "Cart setup",
+      "Checkout flow",
+      "Brand sections",
+      "Launch support",
     ],
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section className="relative overflow-hidden bg-[#050b16] px-6 py-24 text-white lg:px-8">
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.12),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(37,99,235,0.10),_transparent_35%)]" />
+    <section className="bg-white py-24 text-slate-950">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        
+        <FadeUp>
+          <div className="max-w-3xl">
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-600">
+              What We Build
+            </p>
 
-      <div className="relative mx-auto max-w-7xl">
-        {/* Header */}
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-5 text-sm font-black uppercase tracking-[0.35em] text-sky-300">
-            Services
-          </p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">
+              Website solutions built around real small-business needs.
+            </h2>
 
-          <h2 className="text-4xl font-black tracking-[-0.04em] md:text-6xl">
-            Clean websites built for modern businesses.
-          </h2>
+            <p className="mt-6 text-lg leading-8 text-slate-600">
+              Whether you need a simple starter site, a full redesign, or an ecommerce-ready build, the goal is the same: make your business look more professional and easier to trust online.
+            </p>
+          </div>
+        </FadeUp>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Focused on modern design, mobile responsiveness, and helping
-            businesses present themselves professionally online.
-          </p>
-        </div>
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <FadeUp key={service.title} delay={index * 0.15}>
+              <div className="group rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                
+                <div className="mb-6 inline-flex rounded-full bg-sky-100 px-4 py-2 text-xs font-black uppercase tracking-[0.25em] text-sky-700">
+                  {service.price}
+                </div>
 
-        {/* Cards */}
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className={`rounded-[2rem] border p-8 shadow-2xl transition hover:-translate-y-2 ${
-                service.featured
-                  ? "border-sky-300/30 bg-white text-slate-950"
-                  : "border-white/10 bg-white/[0.05] text-white backdrop-blur"
-              }`}
-            >
-              <h3 className="text-3xl font-black tracking-tight">
-                {service.title}
-              </h3>
+                <h3 className="text-3xl font-black transition group-hover:text-sky-700">
+                  {service.title}
+                </h3>
 
-              <p
-                className={`mt-5 leading-8 ${
-                  service.featured ? "text-slate-600" : "text-slate-300"
-                }`}
-              >
-                {service.description}
-              </p>
+                <p className="mt-5 leading-7 text-slate-600">
+                  {service.description}
+                </p>
 
-              <div className="mt-8 space-y-4">
-                {service.features.map((feature) => (
-                  <div
-                    key={feature}
-                    className="flex items-center gap-3"
-                  >
-                    <div
-                      className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-black ${
-                        service.featured
-                          ? "bg-slate-950 text-white"
-                          : "bg-sky-400/15 text-sky-300"
-                      }`}
+                <ul className="mt-8 space-y-4">
+                  {service.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex gap-3 text-sm font-semibold text-slate-700"
                     >
-                      ✓
-                    </div>
+                      <span className="text-sky-600">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
 
-                    <span
-                      className={`font-semibold ${
-                        service.featured
-                          ? "text-slate-800"
-                          : "text-slate-200"
-                      }`}
-                    >
-                      {feature}
-                    </span>
-                  </div>
-                ))}
+                <button className="mt-10 rounded-full bg-slate-950 px-6 py-3 text-xs font-black uppercase tracking-[0.2em] text-white transition hover:bg-sky-600">
+                  Learn More
+                </button>
               </div>
-
-              <Link
-                href="/contact"
-                className={`mt-10 inline-flex w-full justify-center rounded-full px-6 py-4 text-sm font-black transition ${
-                  service.featured
-                    ? "bg-slate-950 text-white hover:bg-sky-700"
-                    : "bg-white text-slate-950 hover:bg-sky-100"
-                }`}
-              >
-                Start Your Website
-              </Link>
-            </div>
+            </FadeUp>
           ))}
         </div>
       </div>
