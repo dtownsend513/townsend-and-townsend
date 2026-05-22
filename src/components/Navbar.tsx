@@ -2,67 +2,80 @@ import Link from "next/link";
 
 import MobileMenu from "./MobileMenu";
 
+const navLinks = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Services",
+    href: "/services",
+  },
+  {
+    name: "Portfolio",
+    href: "/portfolio",
+  },
+  {
+    name: "Pricing",
+    href: "/pricing",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
+];
+
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#050b16]/90 text-white shadow-2xl backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
+    <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#050b16]/80 text-white backdrop-blur-2xl">
+      
+      {/* Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.08),_transparent_30%)]" />
+
+      <div className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
+        
+        {/* Logo */}
         <Link href="/" className="group leading-tight">
+          
           <div className="text-2xl font-black tracking-tight text-white transition group-hover:text-sky-300">
             Townsend & Townsend
           </div>
 
           <div className="mt-1 text-[11px] font-black uppercase tracking-[0.32em] text-sky-400">
-            Digital Solutions
+            Small Business Websites
           </div>
+
         </Link>
 
-        <div className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] p-1 text-sm font-bold text-slate-300 shadow-xl backdrop-blur md:flex">
-          <Link
-            href="/"
-            className="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white"
-          >
-            Home
-          </Link>
+        {/* Desktop Nav */}
+        <div className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] p-1 text-sm font-bold text-slate-300 shadow-2xl backdrop-blur md:flex">
+          
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="rounded-full px-5 py-2.5 transition hover:bg-white/10 hover:text-white"
+            >
+              {link.name}
+            </Link>
+          ))}
 
-          <Link
-            href="/services"
-            className="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white"
-          >
-            Services
-          </Link>
-
-          <Link
-            href="/portfolio"
-            className="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white"
-          >
-            Portfolio
-          </Link>
-
-          <Link
-            href="/about"
-            className="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white"
-          >
-            About
-          </Link>
-
-          <Link
-            href="/contact"
-            className="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white"
-          >
-            Contact
-          </Link>
         </div>
 
+        {/* CTA */}
         <div className="flex items-center gap-4">
+
           <Link
             href="/contact"
-            className="hidden rounded-full bg-white px-6 py-3 text-sm font-black text-slate-950 shadow-xl transition hover:-translate-y-0.5 hover:bg-sky-100 md:block"
+            className="hidden rounded-full bg-sky-500 px-6 py-3 text-sm font-black text-white shadow-lg shadow-sky-500/25 transition hover:-translate-y-0.5 hover:bg-sky-400 md:inline-flex"
           >
-            Get Started
+            Start Your Website
           </Link>
 
           <MobileMenu />
+
         </div>
+
       </div>
     </nav>
   );

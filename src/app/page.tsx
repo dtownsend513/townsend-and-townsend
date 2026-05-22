@@ -1,7 +1,7 @@
 import HeroSection from "@/components/HeroSection";
+import PricingSection from "@/components/PricingSection";
 import ServicesSection from "@/components/ServicesSection";
 import TrustSection from "@/components/TrustSection";
-import PricingSection from "@/components/PricingSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ProcessSection from "@/components/ProcessSection";
@@ -12,11 +12,11 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-white">
       <HeroSection />
 
+      <PricingSection />
+
       <ServicesSection />
 
       <TrustSection />
-
-      <PricingSection />
 
       <PortfolioSection />
 

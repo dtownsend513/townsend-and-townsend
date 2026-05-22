@@ -2,56 +2,79 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "Launch Website",
-    label: "Starter Build",
+    title: "Barbershops & Grooming",
+    label: "Local Businesses",
     description:
-      "A clean, professional website for businesses that need to look credible online without overcomplicating the launch.",
-    features: ["1–3 page structure", "Mobile responsive", "Contact form", "Domain setup help"],
+      "Modern websites for barbershops and grooming brands looking to showcase services, pricing, booking links, and customer trust.",
+    features: [
+      "Service pricing",
+      "Booking integration",
+      "Gallery sections",
+      "Mobile-friendly design",
+    ],
   },
   {
-    title: "Business Redesign",
-    label: "Best Fit",
+    title: "Food Trucks & Food Businesses",
+    label: "Most Popular",
     description:
-      "A stronger website experience for businesses with an outdated, bland, or confusing site that no longer represents them well.",
-    features: ["Modern redesign", "Better messaging", "Visual upgrade", "Conversion flow"],
+      "Professional websites for food trucks, caterers, plate businesses, and local food brands that need menus, business hours, and online visibility.",
+    features: [
+      "Menu sections",
+      "Location & hours",
+      "Social media integration",
+      "Customer contact flow",
+    ],
     featured: true,
   },
   {
-    title: "Online Store",
-    label: "Ecommerce",
+    title: "Clothing Brands & Ecommerce",
+    label: "Online Stores",
     description:
-      "A polished ecommerce setup for product-based businesses that need product pages, checkout flow, and a customer-ready store.",
-    features: ["Product pages", "Cart structure", "Stripe planning", "Launch support"],
+      "Custom ecommerce-ready websites for apparel brands, creators, and startups looking to grow a professional online presence.",
+    features: [
+      "Product pages",
+      "Shopping cart setup",
+      "Brand-focused layouts",
+      "Launch assistance",
+    ],
   },
 ];
 
 export default function ServicesSection() {
   return (
     <section className="relative overflow-hidden bg-[#050b16] px-6 py-32 text-white lg:px-8">
+      
+      {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.14),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(37,99,235,0.12),_transparent_35%)]" />
 
       <div className="absolute inset-0 bg-[linear-gradient(to_right,_rgba(255,255,255,0.035)_1px,_transparent_1px),linear-gradient(to_bottom,_rgba(255,255,255,0.035)_1px,_transparent_1px)] bg-[size:90px_90px] opacity-20" />
 
       <div className="relative mx-auto max-w-7xl">
+
+        {/* Section Header */}
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          
           <div>
             <p className="mb-5 text-sm font-black uppercase tracking-[0.35em] text-sky-300">
-              What We Build
+              Businesses We Help
             </p>
 
             <h2 className="max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">
-              Websites built around business credibility, not just decoration.
+              Modern websites built for entrepreneurs and growing brands.
             </h2>
           </div>
 
           <p className="max-w-2xl text-lg leading-8 text-slate-300 lg:justify-self-end">
-            Every build is designed to help your business look professional,
-            explain your services clearly, and give customers a simple path to
-            contact you, book you, or buy from you.
+            We help local businesses and entrepreneurs create professional
+            online experiences that build trust, attract customers, and make
+            their business stand out online.
           </p>
+
         </div>
 
+        {/* Service Cards */}
         <div className="mt-16 grid gap-8 lg:grid-cols-3">
+          
           {services.map((service) => (
             <div
               key={service.title}
@@ -61,6 +84,8 @@ export default function ServicesSection() {
                   : "border-white/10 bg-white/[0.06] text-white backdrop-blur"
               }`}
             >
+
+              {/* Top Border */}
               <div
                 className={`absolute inset-x-0 top-0 h-1 ${
                   service.featured
@@ -69,12 +94,14 @@ export default function ServicesSection() {
                 }`}
               />
 
+              {/* Featured Badge */}
               {service.featured && (
                 <div className="absolute right-8 top-8 rounded-full bg-slate-950 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-white">
                   Most Popular
                 </div>
               )}
 
+              {/* Label */}
               <p
                 className={`text-sm font-black uppercase tracking-[0.3em] ${
                   service.featured ? "text-sky-600" : "text-sky-300"
@@ -83,10 +110,12 @@ export default function ServicesSection() {
                 {service.label}
               </p>
 
+              {/* Title */}
               <h3 className="mt-8 text-3xl font-black tracking-[-0.03em] md:text-4xl">
                 {service.title}
               </h3>
 
+              {/* Description */}
               <p
                 className={`mt-6 leading-8 ${
                   service.featured ? "text-slate-600" : "text-slate-300"
@@ -95,9 +124,12 @@ export default function ServicesSection() {
                 {service.description}
               </p>
 
+              {/* Features */}
               <div className="mt-8 space-y-4">
+                
                 {service.features.map((feature) => (
                   <div key={feature} className="flex items-center gap-4">
+
                     <span
                       className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-black ${
                         service.featured
@@ -115,10 +147,13 @@ export default function ServicesSection() {
                     >
                       {feature}
                     </span>
+
                   </div>
                 ))}
+
               </div>
 
+              {/* Button */}
               <Link
                 href="/contact"
                 className={`mt-10 inline-flex w-full justify-center rounded-full px-6 py-4 text-sm font-black transition ${
@@ -129,20 +164,27 @@ export default function ServicesSection() {
               >
                 Start This Project
               </Link>
+
             </div>
           ))}
+
         </div>
 
+        {/* Bottom Statement */}
         <div className="mt-12 rounded-[2rem] border border-white/10 bg-white/[0.06] p-8 text-center shadow-2xl backdrop-blur">
+          
           <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-300">
-            Straightforward Process
+            Built For Real Businesses
           </p>
 
           <p className="mx-auto mt-4 max-w-4xl text-2xl font-black tracking-[-0.03em] md:text-4xl">
-            No confusing packages. No forced subscriptions. Just a professional
-            website built around what your business actually needs.
+            From startups and food businesses to clothing brands and local
+            services, we help entrepreneurs launch modern websites that make
+            their business look professional online.
           </p>
+
         </div>
+
       </div>
     </section>
   );

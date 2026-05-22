@@ -4,22 +4,79 @@ import Link from "next/link";
 const portfolioItems = [
   {
     title: "Komposition Beauty",
-    category: "Ecommerce Website",
+    category: "Beauty Ecommerce Website",
     image: "/images/komposition-preview.jpg",
     description:
       "A polished skincare ecommerce site focused on premium branding, product presentation, mobile experience, and customer trust.",
     link: "https://komposition.com",
-    tags: ["Ecommerce", "Beauty Brand", "Mobile UX"],
+    tags: ["Ecommerce", "Beauty Brand", "Product Sales"],
+    external: true,
   },
   {
     title: "Bartender With A Smile",
-    category: "Service Business Website",
+    category: "Event Service Website",
     image: "/images/bartender-preview.jpg",
     description:
-      "A modern event-service website redesign built around stronger visuals, clearer messaging, and easier customer inquiries.",
+      "A modern event-service website built around stronger visuals, clearer messaging, and easier customer inquiries.",
     link: "https://www.bartenderwithasmile.com",
-    tags: ["Service Business", "Lead Capture", "Redesign"],
+    tags: ["Service Business", "Lead Capture", "Events"],
+    external: true,
   },
+  {
+    title: "The Chair Club",
+    category: "Barbershop Demo Website",
+    image:
+      "https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description:
+      "A premium demo barbershop website concept designed to showcase booking, pricing, atmosphere, gallery sections, and modern business presentation.",
+    link: "/demo-barbershop",
+    tags: ["Barbershop", "Local Business", "Demo Website"],
+    external: false,
+  },
+  {
+    title: "Flame Street Eats",
+    category: "Food Truck Demo Website",
+    image:
+      "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=1200&q=80",
+    description:
+      "A bold demo food truck website concept designed to showcase street food, daily locations, menu highlights, catering requests, and social media energy.",
+    link: "/demo-food-truck",
+    tags: ["Food Truck", "Street Food", "Demo Website"],
+    external: false,
+  },
+  {
+    title: "Crown District",
+    category: "Clothing Brand Demo Website",
+    image:
+      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description:
+      "A premium streetwear and clothing-brand demo website focused on product drops, ecommerce presentation, lifestyle visuals, and mobile-first shopping.",
+    link: "/demo-clothing-brand",
+    tags: ["Streetwear", "Ecommerce", "Demo Website"],
+    external: false,
+  },
+  {
+    title: "Fresh Finish Auto Care",
+    category: "Auto Detailing Demo Website",
+    image:
+      "https://images.pexels.com/photos/6872144/pexels-photo-6872144.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description:
+      "A realistic auto detailing demo website focused on interior cleaning, wrap services, tint prep, detailing packages, and local booking conversion.",
+    link: "/demo-auto-detailing",
+    tags: ["Auto Detailing", "Wrap Shop", "Demo Website"],
+    external: false,
+  },
+];
+
+const demoIndustries = [
+  "Barbershops",
+  "Food Trucks",
+  "Clothing Brands",
+  "Auto Detailing",
+  "Wrap Shops",
+  "Beauty Professionals",
+  "DJs & Event Services",
+  "Local Startups",
 ];
 
 export default function PortfolioSection() {
@@ -27,22 +84,24 @@ export default function PortfolioSection() {
     <section className="relative overflow-hidden bg-slate-950 px-6 py-28 text-white lg:px-8">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(56,189,248,0.18),_transparent_35%)]" />
 
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(168,85,247,0.12),_transparent_32%)]" />
+
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <p className="mb-4 text-sm font-black uppercase tracking-[0.35em] text-sky-400">
-              Proof of Work
+              Website Examples
             </p>
 
             <h2 className="text-4xl font-black tracking-tight md:text-6xl">
-              Real websites. Real business presentation.
+              See how your business could show up online.
             </h2>
           </div>
 
           <p className="max-w-2xl text-lg leading-8 text-slate-300 lg:justify-self-end">
-            Your website should look like your business is active, trustworthy,
-            and ready for customers. These projects show the type of modern
-            digital presence we build for local brands.
+            From beauty brands and event services to food businesses,
+            barbershops, clothing brands, and automotive services, these demos
+            help businesses visualize a stronger online presence.
           </p>
         </div>
 
@@ -57,13 +116,21 @@ export default function PortfolioSection() {
                   index % 2 === 1 ? "lg:order-2" : ""
                 }`}
               >
-                <Image
-                  src={item.image}
-                  alt={`${item.title} website preview`}
-                  width={1400}
-                  height={900}
-                  className="max-h-[380px] w-full rounded-2xl object-contain"
-                />
+                {item.image.startsWith("http") ? (
+                  <img
+                    src={item.image}
+                    alt={`${item.title} website preview`}
+                    className="max-h-[380px] w-full rounded-2xl object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={item.image}
+                    alt={`${item.title} website preview`}
+                    width={1400}
+                    height={900}
+                    className="max-h-[380px] w-full rounded-2xl object-contain"
+                  />
+                )}
               </div>
 
               <div className="flex flex-col justify-center p-8 md:p-12">
@@ -92,14 +159,48 @@ export default function PortfolioSection() {
 
                 <Link
                   href={item.link}
-                  target="_blank"
+                  target={item.external ? "_blank" : undefined}
                   className="mt-9 inline-flex w-fit rounded-full bg-white px-6 py-3 text-sm font-black text-slate-950 transition hover:bg-sky-100"
                 >
-                  View Live Project
+                  {item.external ? "View Live Project" : "View Demo Website"}
                 </Link>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 rounded-[2rem] border border-white/10 bg-white/[0.06] p-8 shadow-2xl backdrop-blur md:p-10">
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-300">
+                More Industries
+              </p>
+
+              <h3 className="mt-4 text-3xl font-black tracking-tight md:text-4xl">
+                Built for the businesses people are starting right now.
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {demoIndustries.map((industry) => (
+                <div
+                  key={industry}
+                  className="rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-4 text-center text-sm font-bold text-slate-200"
+                >
+                  {industry}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/contact"
+            className="inline-flex rounded-full bg-sky-500 px-8 py-4 text-sm font-black uppercase tracking-wide text-white shadow-lg shadow-sky-500/25 transition hover:bg-sky-400"
+          >
+            Start Your Website
+          </Link>
         </div>
       </div>
     </section>
