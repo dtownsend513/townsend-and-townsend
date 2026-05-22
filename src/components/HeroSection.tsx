@@ -68,6 +68,7 @@ export default function HeroSection() {
         <div className="relative hidden lg:block">
           <div className="rounded-[2.5rem] border border-white/10 bg-white/10 p-4 shadow-2xl backdrop-blur">
             <div className="rounded-[2rem] bg-slate-900 p-6">
+              
               <div className="mb-6 flex gap-2">
                 <span className="h-3 w-3 rounded-full bg-red-400" />
                 <span className="h-3 w-3 rounded-full bg-yellow-400" />
@@ -75,18 +76,56 @@ export default function HeroSection() {
               </div>
 
               <div className="space-y-5">
-                <div className="h-56 rounded-3xl bg-gradient-to-br from-sky-400 to-blue-700" />
+                
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop"
+                  alt="Website dashboard preview"
+                  className="h-56 w-full rounded-3xl object-cover"
+                />
 
-                <div className="h-5 w-3/4 rounded-full bg-white/20" />
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <p className="text-xs font-black uppercase tracking-[0.25em] text-sky-300">
+                    Website Performance
+                  </p>
 
-                <div className="h-5 w-1/2 rounded-full bg-white/10" />
+                  <div className="mt-5 space-y-4">
+                    
+                    <div>
+                      <div className="mb-2 flex items-center justify-between text-sm font-semibold text-white">
+                        <span>Mobile Optimization</span>
+                        <span>96%</span>
+                      </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="h-28 rounded-2xl bg-white/10" />
-                  <div className="h-28 rounded-2xl bg-white/10" />
+                      <div className="h-3 overflow-hidden rounded-full bg-white/10">
+                        <div className="h-full w-[96%] rounded-full bg-sky-400" />
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="mb-2 flex items-center justify-between text-sm font-semibold text-white">
+                        <span>SEO Structure</span>
+                        <span>92%</span>
+                      </div>
+
+                      <div className="h-3 overflow-hidden rounded-full bg-white/10">
+                        <div className="h-full w-[92%] rounded-full bg-blue-500" />
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="mb-2 flex items-center justify-between text-sm font-semibold text-white">
+                        <span>User Experience</span>
+                        <span>98%</span>
+                      </div>
+
+                      <div className="h-3 overflow-hidden rounded-full bg-white/10">
+                        <div className="h-full w-[98%] rounded-full bg-cyan-300" />
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
 
-                <div className="h-12 rounded-full bg-sky-400" />
               </div>
             </div>
           </div>
