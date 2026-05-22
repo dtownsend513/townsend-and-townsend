@@ -17,6 +17,7 @@ const projects = [
     ],
     liveUrl: "https://komposition.com",
     accent: "from-amber-200/20 via-orange-300/10 to-transparent",
+    external: true,
   },
   {
     title: "Bartender With A Smile",
@@ -33,12 +34,86 @@ const projects = [
     ],
     liveUrl: "https://www.bartenderwithasmile.com",
     accent: "from-sky-300/20 via-cyan-300/10 to-transparent",
+    external: true,
+  },
+  {
+    title: "The Chair Club",
+    category: "Barbershop Demo Website",
+    image:
+      "https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    description:
+      "A premium barbershop demo focused on appointment booking, service presentation, modern branding, and local business credibility.",
+    highlights: [
+      "Modern booking layout",
+      "Barber-focused branding",
+      "Mobile-first design",
+      "Local business positioning",
+      "Premium service presentation",
+    ],
+    liveUrl: "/demo-barbershop",
+    accent: "from-slate-200/20 via-slate-400/10 to-transparent",
+    external: false,
+  },
+  {
+    title: "Flame Street Eats",
+    category: "Food Truck Demo Website",
+    image:
+      "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=1400&q=80",
+    description:
+      "A bold food truck concept website built around menu presentation, social energy, catering inquiries, and street-food branding.",
+    highlights: [
+      "Street food branding",
+      "Menu-focused layout",
+      "Catering inquiry flow",
+      "Social-style visuals",
+      "Mobile optimized",
+    ],
+    liveUrl: "/demo-food-truck",
+    accent: "from-orange-300/20 via-red-400/10 to-transparent",
+    external: false,
+  },
+  {
+    title: "Crown District",
+    category: "Clothing Brand Demo Website",
+    image:
+      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    description:
+      "A modern streetwear ecommerce demo focused on product drops, visual branding, premium layouts, and mobile shopping.",
+    highlights: [
+      "Streetwear branding",
+      "Product-focused ecommerce",
+      "Luxury visual direction",
+      "Modern product presentation",
+      "Mobile shopping experience",
+    ],
+    liveUrl: "/demo-clothing-brand",
+    accent: "from-violet-300/20 via-indigo-400/10 to-transparent",
+    external: false,
+  },
+  {
+    title: "Fresh Finish Auto Care",
+    category: "Auto Detailing Demo Website",
+    image:
+      "https://images.pexels.com/photos/6872144/pexels-photo-6872144.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    description:
+      "A realistic detailing and wrap-shop demo website showcasing interior cleaning, tint prep, detailing packages, and service booking.",
+    highlights: [
+      "Auto detailing branding",
+      "Interior cleaning visuals",
+      "Wrap & tint positioning",
+      "Service-focused layout",
+      "Lead-generation design",
+    ],
+    liveUrl: "/demo-auto-detailing",
+    accent: "from-sky-300/20 via-blue-400/10 to-transparent",
+    external: false,
   },
 ];
 
 export default function PortfolioPage() {
   return (
     <main className="overflow-hidden bg-[#050b16] text-white">
+      {/* Hero */}
       <section className="relative overflow-hidden px-6 pb-24 pt-28 lg:px-8">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.18),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(37,99,235,0.16),_transparent_35%)]" />
 
@@ -50,17 +125,18 @@ export default function PortfolioPage() {
           </div>
 
           <h1 className="mx-auto mt-8 max-w-5xl text-5xl font-black tracking-[-0.04em] md:text-7xl lg:text-8xl">
-            Websites built to make businesses look more credible online.
+            Modern websites built to elevate businesses online.
           </h1>
 
           <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl md:leading-9">
-            Modern business websites focused on stronger branding, better
-            customer trust, cleaner mobile experiences, and more professional
-            presentation.
+            From ecommerce brands and food businesses to local services and
+            startups, these projects are designed to make businesses look more
+            modern, trustworthy, and customer-ready.
           </p>
         </div>
       </section>
 
+      {/* Projects */}
       <section className="relative px-6 pb-28 lg:px-8">
         <div className="mx-auto max-w-7xl space-y-32">
           {projects.map((project, index) => (
@@ -70,12 +146,13 @@ export default function PortfolioPage() {
                 index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
               }`}
             >
-              <div className="relative">
+              {/* Image Side */}
+              <div className="relative group">
                 <div
                   className={`absolute -inset-10 rounded-full bg-gradient-to-r ${project.accent} blur-3xl`}
                 />
 
-                <div className="relative rounded-[2.5rem] border border-white/10 bg-white/[0.06] p-5 shadow-[0_40px_120px_rgba(0,0,0,0.45)] backdrop-blur">
+                <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.06] p-5 shadow-[0_40px_120px_rgba(0,0,0,0.45)] backdrop-blur transition duration-500 group-hover:-translate-y-2">
                   <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#020817]">
                     <div className="flex items-center gap-2 border-b border-white/10 px-5 py-4">
                       <span className="h-3 w-3 rounded-full bg-red-400" />
@@ -83,21 +160,30 @@ export default function PortfolioPage() {
                       <span className="h-3 w-3 rounded-full bg-green-400" />
 
                       <div className="ml-4 rounded-full bg-white/10 px-4 py-1 text-xs font-bold text-slate-300">
-                        Live Website Preview
+                        Website Preview
                       </div>
                     </div>
 
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={1800}
-                      height={1200}
-                      className="h-auto w-full object-cover transition duration-700 hover:scale-[1.02]"
-                    />
+                    {project.image.startsWith("http") ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="h-auto w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                      />
+                    ) : (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={1800}
+                        height={1200}
+                        className="h-auto w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                      />
+                    )}
                   </div>
                 </div>
               </div>
 
+              {/* Content */}
               <div>
                 <p className="text-sm font-black uppercase tracking-[0.35em] text-sky-300">
                   {project.category}
@@ -115,7 +201,7 @@ export default function PortfolioPage() {
                   {project.highlights.map((highlight) => (
                     <div
                       key={highlight}
-                      className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur"
+                      className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur transition hover:border-sky-300/20 hover:bg-white/[0.06]"
                     >
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-400/15 text-sm font-black text-sky-300">
                         ✓
@@ -131,10 +217,12 @@ export default function PortfolioPage() {
                 <div className="mt-10 flex flex-wrap gap-4">
                   <Link
                     href={project.liveUrl}
-                    target="_blank"
+                    target={project.external ? "_blank" : undefined}
                     className="rounded-full bg-white px-8 py-4 text-sm font-black text-slate-950 transition hover:-translate-y-1 hover:bg-sky-100"
                   >
-                    View Live Website
+                    {project.external
+                      ? "View Live Website"
+                      : "View Demo Website"}
                   </Link>
 
                   <Link
@@ -150,6 +238,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="relative px-6 pb-32 lg:px-8">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(56,189,248,0.12),_transparent_45%)]" />
 
