@@ -1,28 +1,22 @@
 import HeroSection from "@/components/HeroSection";
-import PricingSection from "@/components/PricingSection";
-import ServicesSection from "@/components/ServicesSection";
-import TrustSection from "@/components/TrustSection";
 import PortfolioSection from "@/components/PortfolioSection";
+import ServicesSection from "@/components/ServicesSection";
+import PricingSection from "@/components/PricingSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import ProcessSection from "@/components/ProcessSection";
 import CTASection from "@/components/CTASection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-white">
+    <main className="min-h-screen overflow-hidden bg-slate-950">
       <HeroSection />
-
-      <PricingSection />
-
-      <ServicesSection />
-
-      <TrustSection />
 
       <PortfolioSection />
 
-      <TestimonialsSection />
+      <ServicesSection />
 
-      <ProcessSection />
+      <PricingSection />
+
+      <TestimonialsSection />
 
       <CTASection />
     </main>

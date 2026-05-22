@@ -82,11 +82,13 @@ const demoIndustries = [
 export default function PortfolioSection() {
   return (
     <section className="relative overflow-hidden bg-slate-950 px-6 py-28 text-white lg:px-8">
+      {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(56,189,248,0.18),_transparent_35%)]" />
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(168,85,247,0.12),_transparent_32%)]" />
 
       <div className="relative mx-auto max-w-7xl">
+        {/* Header */}
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <p className="mb-4 text-sm font-black uppercase tracking-[0.35em] text-sky-400">
@@ -105,14 +107,16 @@ export default function PortfolioSection() {
           </p>
         </div>
 
+        {/* Portfolio Cards */}
         <div className="mt-16 space-y-10">
           {portfolioItems.map((item, index) => (
             <div
               key={item.title}
-              className="grid overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] shadow-2xl lg:grid-cols-[1.15fr_0.85fr]"
+              className="group grid overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/[0.04] shadow-[0_35px_120px_rgba(0,0,0,0.4)] transition duration-500 hover:-translate-y-2 hover:border-sky-300/30 hover:shadow-[0_50px_160px_rgba(0,0,0,0.55)] lg:grid-cols-[1.15fr_0.85fr]"
             >
+              {/* Image Side */}
               <div
-                className={`relative flex min-h-[420px] items-center justify-center bg-slate-950 p-6 ${
+                className={`relative overflow-hidden bg-slate-950 ${
                   index % 2 === 1 ? "lg:order-2" : ""
                 }`}
               >
@@ -120,7 +124,7 @@ export default function PortfolioSection() {
                   <img
                     src={item.image}
                     alt={`${item.title} website preview`}
-                    className="max-h-[380px] w-full rounded-2xl object-cover"
+                    className="h-full min-h-[420px] w-full object-cover transition duration-700 group-hover:scale-105"
                   />
                 ) : (
                   <Image
@@ -128,14 +132,23 @@ export default function PortfolioSection() {
                     alt={`${item.title} website preview`}
                     width={1400}
                     height={900}
-                    className="max-h-[380px] w-full rounded-2xl object-contain"
+                    className="h-full min-h-[420px] w-full object-cover transition duration-700 group-hover:scale-105"
                   />
                 )}
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/10 to-transparent opacity-80" />
+
+                {/* Floating Label */}
+                <div className="absolute left-6 top-6 rounded-full border border-white/10 bg-black/40 px-4 py-2 text-xs font-black uppercase tracking-[0.25em] text-white backdrop-blur-xl">
+                  {item.category}
+                </div>
               </div>
 
+              {/* Content Side */}
               <div className="flex flex-col justify-center p-8 md:p-12">
                 <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-400">
-                  {item.category}
+                  Featured Demo
                 </p>
 
                 <h3 className="mt-5 text-3xl font-black tracking-tight md:text-4xl">
@@ -146,21 +159,23 @@ export default function PortfolioSection() {
                   {item.description}
                 </p>
 
+                {/* Tags */}
                 <div className="mt-7 flex flex-wrap gap-2">
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-wide text-slate-200"
+                      className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-xs font-black uppercase tracking-wide text-slate-200 transition group-hover:border-sky-300/20"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
+                {/* CTA */}
                 <Link
                   href={item.link}
                   target={item.external ? "_blank" : undefined}
-                  className="mt-9 inline-flex w-fit rounded-full bg-white px-6 py-3 text-sm font-black text-slate-950 transition hover:bg-sky-100"
+                  className="mt-9 inline-flex w-fit rounded-full bg-white px-6 py-3 text-sm font-black text-slate-950 transition hover:scale-[1.02] hover:bg-sky-100"
                 >
                   {item.external ? "View Live Project" : "View Demo Website"}
                 </Link>
@@ -169,6 +184,7 @@ export default function PortfolioSection() {
           ))}
         </div>
 
+        {/* Industries */}
         <div className="mt-16 rounded-[2rem] border border-white/10 bg-white/[0.06] p-8 shadow-2xl backdrop-blur md:p-10">
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
             <div>
@@ -185,7 +201,7 @@ export default function PortfolioSection() {
               {demoIndustries.map((industry) => (
                 <div
                   key={industry}
-                  className="rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-4 text-center text-sm font-bold text-slate-200"
+                  className="rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-4 text-center text-sm font-bold text-slate-200 transition hover:-translate-y-1 hover:border-sky-300/20 hover:bg-white/[0.05]"
                 >
                   {industry}
                 </div>
@@ -194,10 +210,11 @@ export default function PortfolioSection() {
           </div>
         </div>
 
+        {/* Bottom CTA */}
         <div className="mt-10 text-center">
           <Link
             href="/contact"
-            className="inline-flex rounded-full bg-sky-500 px-8 py-4 text-sm font-black uppercase tracking-wide text-white shadow-lg shadow-sky-500/25 transition hover:bg-sky-400"
+            className="inline-flex rounded-full bg-sky-500 px-8 py-4 text-sm font-black uppercase tracking-wide text-white shadow-lg shadow-sky-500/25 transition hover:scale-[1.02] hover:bg-sky-400"
           >
             Start Your Website
           </Link>
