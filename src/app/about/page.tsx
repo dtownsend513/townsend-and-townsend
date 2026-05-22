@@ -42,9 +42,9 @@ export default function AboutPage() {
           </h1>
 
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-300">
-            Modern website design focused on stronger branding, cleaner user
-            experience, mobile responsiveness, and helping businesses present
-            themselves professionally online.
+            A Cincinnati web design studio focused on modern websites,
+            stronger branding, mobile responsiveness, and helping small
+            businesses present themselves professionally online.
           </p>
         </div>
       </section>
@@ -64,12 +64,16 @@ export default function AboutPage() {
 
             <div className="mt-10 overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.05] shadow-2xl backdrop-blur">
               <img
-                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1400"
-                alt="Business meeting"
+                src="https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=1400"
+                alt="Diverse business team working together"
                 className="h-[320px] w-full object-cover"
               />
 
               <div className="p-8">
+                <div className="mb-6 inline-flex rounded-full border border-sky-300/20 bg-sky-400/10 px-4 py-2 text-xs font-black uppercase tracking-[0.25em] text-sky-300">
+                  Modern Small Business Web Design
+                </div>
+
                 <p className="text-lg leading-8 text-slate-300">
                   Working with entrepreneurs, startups, local businesses, and
                   growing brands looking for stronger online presentation and
